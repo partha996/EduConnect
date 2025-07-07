@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { GraduationCap, BookOpen, Lightbulb, Users, ArrowRight } from "lucide-react";
+import { GraduationCap, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const LandingPageHeader = () => {
     return (
@@ -30,6 +32,44 @@ const LandingPageHeader = () => {
         </header>
     );
 };
+
+const FeatureSection = ({
+  title,
+  description,
+  imageUrl,
+  imageHint,
+  reverse = false,
+}: {
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageHint: string;
+  reverse?: boolean;
+}) => (
+  <div
+    className={cn(
+      "flex flex-col items-center gap-8 md:gap-16 lg:gap-24",
+      reverse ? "md:flex-row-reverse" : "md:flex-row"
+    )}
+  >
+    <div className="md:w-1/2">
+      <Image
+        src={imageUrl}
+        alt={title}
+        width={800}
+        height={600}
+        className="rounded-lg shadow-xl object-cover aspect-[4/3] transition-transform duration-500 ease-in-out hover:scale-105"
+        data-ai-hint={imageHint}
+      />
+    </div>
+    <div className="md:w-1/2 text-center md:text-left">
+      <h3 className="font-headline text-3xl font-bold mb-4">{title}</h3>
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        {description}
+      </p>
+    </div>
+  </div>
+);
 
 
 export default function Home() {
@@ -64,30 +104,37 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The Challenge Section */}
+        {/* Features Section */}
         <section className="w-full py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-headline text-4xl md:text-5xl font-bold text-foreground">The Challenge in Rural Education</h2>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="font-headline text-4xl md:text-5xl font-bold text-foreground">
+                How We Help You Succeed
+              </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Students in rural India face significant hurdles that limit their potential. We are here to address these challenges head-on.
+                We address the key challenges in rural education with a
+                comprehensive platform designed to empower students.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <ChallengeCard
-                icon={<BookOpen className="h-8 w-8 text-primary" />}
-                title="Limited Access"
-                description="Lack of quality educational materials and infrastructure in remote areas."
+            <div className="space-y-20">
+              <FeatureSection
+                title="Unlimited Access to Quality Resources"
+                description="Forget searching for reliable study material. We provide a vast, curated library of eBooks, video lectures, and practice quizzes for grades 1-10, all completely free. Everything you need is in one place."
+                imageUrl="https://placehold.co/800x600"
+                imageHint="library books"
               />
-              <ChallengeCard
-                icon={<Lightbulb className="h-8 w-8 text-primary" />}
-                title="Lack of Guidance"
-                description="Absence of proper career counseling and mentorship to guide students."
+              <FeatureSection
+                title="Clear Guidance for Your Future"
+                description="Don't know what career to pursue? Our AI-powered tools and dedicated mentors help you understand your strengths and interests, guiding you towards a fulfilling career path you're passionate about."
+                imageUrl="https://placehold.co/800x600"
+                imageHint="compass direction"
+                reverse={true}
               />
-              <ChallengeCard
-                icon={<Users className="h-8 w-8 text-primary" />}
-                title="Digital Divide"
-                description="Poor internet connectivity and lack of access to digital learning tools."
+              <FeatureSection
+                title="Bridging the Digital & Community Gap"
+                description="Learn and grow with others. Our platform connects you with fellow students and experienced mentors, creating a supportive community where you can ask questions, share knowledge, and stay motivated."
+                imageUrl="https://placehold.co/800x600"
+                imageHint="students collaborating"
               />
             </div>
           </div>
@@ -100,19 +147,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  );
-}
-
-function ChallengeCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-  return (
-    <Card className="text-left p-6 bg-card border hover:shadow-lg transition-shadow">
-        <CardContent className="flex flex-col items-start gap-4 p-0">
-            <div className="bg-primary/10 p-3 rounded-lg">
-                {icon}
-            </div>
-            <h3 className="text-xl font-bold font-headline">{title}</h3>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-    </Card>
   );
 }
