@@ -1,4 +1,4 @@
-# EduConnect
+# EduConnect India
 
 This is a NextJS starter in Firebase Studio.
 

@@ -19,7 +19,7 @@ const ptSans = PT_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "EduConnect",
+  title: "EduConnect India",
   description: "Empowering rural students with resources, guidance, and community.",
 };
 
