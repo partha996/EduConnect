@@ -16,7 +16,7 @@ The AI features in this app use the Google AI platform. You'll need an API key t
 2.  Add your Google AI API key to this file. You can get a free key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
     ```
-    GOOGLE_API_KEY="your_api_key_here"
+    GOOGLE_API_KEY=AIzaSyAY5Gf6Gm21Ry5F46wRP2Cab-mdj6RpU-g
     ```
 
 ### 2. Run the Development Servers
