@@ -41,7 +41,7 @@ export default function CommunityPage() {
           <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
             <Link href="#" target="_blank" rel="noopener noreferrer">
               <Card className="h-full hover:border-primary/50 hover:bg-accent/20 transition-all transform hover:-translate-y-1">
-                <CardHeader className="flex-row items-center gap-4">
+                <CardHeader className="flex-row items-start gap-4">
                   <DiscordIcon className="h-10 w-10 text-[#5865F2]" />
                   <div>
                     <CardTitle className="font-headline text-xl">Discord Community</CardTitle>
@@ -57,7 +57,7 @@ export default function CommunityPage() {
             </Link>
             <Link href="#" target="_blank" rel="noopener noreferrer">
               <Card className="h-full hover:border-primary/50 hover:bg-accent/20 transition-all transform hover:-translate-y-1">
-                <CardHeader className="flex-row items-center gap-4">
+                <CardHeader className="flex-row items-start gap-4">
                     <RedditIcon className="h-10 w-10 text-[#FF4500]" />
                     <div>
                         <CardTitle className="font-headline text-xl">Reddit Forum</CardTitle>
