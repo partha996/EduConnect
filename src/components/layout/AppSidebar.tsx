@@ -60,14 +60,14 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
             <div className="bg-primary p-2 rounded-lg">
                 <Rocket className="text-primary-foreground" />
             </div>
             <div className={state === 'collapsed' ? 'hidden' : 'block'}>
                 <Logo />
             </div>
-        </div>
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
