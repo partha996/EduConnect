@@ -1,3 +1,4 @@
+
 export type Resource = {
   id: string;
   title: string;
@@ -102,12 +103,12 @@ export type Mentor = {
 };
 
 export const mentors: Mentor[] = [
-  { id: 'm01', name: 'Dr. Anjali Sharma', expertise: 'Astrophysics', bio: 'PhD in Astrophysics from IIT Bombay, passionate about making science accessible.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'female scientist' },
-  { id: 'm02', name: 'Rohan Verma', expertise: 'Software Engineering', bio: 'Senior Software Engineer at a top tech company, loves to code and mentor.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'male engineer' },
-  { id: 'm03', name: 'Priya Singh', expertise: 'Biotechnology', bio: 'Researcher focused on genetic engineering. Believes in hands-on learning.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'woman researcher' },
-  { id: 'm04', name: 'Vikram Choudhary', expertise: 'Civil Services', bio: 'IAS officer with 10 years of experience in public administration.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'man portrait' },
-  { id: 'm05', name: 'Aisha Khan', expertise: 'Mathematics', bio: 'Gold medalist in Mathematics Olympiad, now teaching at a leading university.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'woman teacher' },
-  { id: 'm06', name: 'Sameer Desai', expertise: 'Entrepreneurship', bio: 'Founder of two successful startups. Helps students with their business ideas.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'male entrepreneur' },
+  { id: 'm01', name: 'Dr. Anjali Sharma', expertise: 'Science Teacher', bio: 'Loves making science fun! Specializes in hands-on experiments for Physics and Chemistry.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'female scientist' },
+  { id: 'm02', name: 'Rohan Verma', expertise: 'Creative Arts & Crafts', bio: 'An artist who believes everyone can be creative. Let\'s draw, paint, and build together!', avatarUrl: 'https://placehold.co/100x100', aiHint: 'male artist' },
+  { id: 'm03', name: 'Priya Singh', expertise: 'Biology & Environment', bio: 'Passionate about plants, animals, and our planet. Let\'s explore the world of living things.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'woman researcher' },
+  { id: 'm04', name: 'Vikram Choudhary', expertise: 'History & Social Studies', bio: 'A storyteller who brings the past to life. Learn about great leaders and important events.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'man portrait' },
+  { id: 'm05', name: 'Aisha Khan', expertise: 'Mathematics Whiz', bio: 'Makes math easy and enjoyable, from basic counting to tricky algebra problems.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'woman teacher' },
+  { id: 'm06', name: 'Sameer Desai', expertise: 'English & Storytelling', bio: 'Helps students improve their English reading and writing skills through exciting stories.', avatarUrl: 'https://placehold.co/100x100', aiHint: 'male teacher' },
 ];
 
 export type User = {
