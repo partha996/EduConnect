@@ -139,7 +139,7 @@ export default function Home() {
 function Feature({ icon, title, description, imageUrl, aiHint, reverse = false }: { icon: React.ReactNode; title: string; description: string, imageUrl: string, aiHint: string, reverse?: boolean }) {
   return (
     <div className={`grid md:grid-cols-2 gap-12 items-center ${reverse ? 'md:grid-flow-col-dense' : ''}`}>
-      <div className={`space-y-4 ${reverse ? 'md:col-start-2' : ''}`}>
+      <div className={`space-y-4 text-center md:text-left ${reverse ? 'md:col-start-2' : ''}`}>
         <div className="inline-block bg-primary/10 rounded-lg p-3">
           {icon}
         </div>
@@ -153,7 +153,7 @@ function Feature({ icon, title, description, imageUrl, aiHint, reverse = false }
             alt={title}
             width={600}
             height={400}
-            className="rounded-lg shadow-xl object-cover"
+            className="rounded-lg shadow-xl object-cover mx-auto"
             data-ai-hint={aiHint}
           />
       </div>
