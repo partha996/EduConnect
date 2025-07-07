@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const LandingPageHeader = () => {
@@ -36,38 +34,18 @@ const LandingPageHeader = () => {
 const FeatureSection = ({
   title,
   description,
-  imageUrl,
-  imageHint,
-  reverse = false,
 }: {
   title: string;
   description: string;
-  imageUrl: string;
-  imageHint: string;
-  reverse?: boolean;
 }) => (
-  <div
-    className={cn(
-      "flex flex-col items-center gap-8 md:gap-16 lg:gap-24",
-      reverse ? "md:flex-row-reverse" : "md:flex-row"
-    )}
-  >
-    <div className="md:w-1/2">
-      <Image
-        src={imageUrl}
-        alt={title}
-        width={800}
-        height={600}
-        className="rounded-lg shadow-xl object-cover aspect-[4/3] transition-transform duration-500 ease-in-out hover:scale-105"
-        data-ai-hint={imageHint}
-      />
-    </div>
-    <div className="md:w-1/2 text-center md:text-left">
-      <h3 className="font-headline text-3xl font-bold mb-4">{title}</h3>
-      <p className="text-muted-foreground text-lg leading-relaxed">
-        {description}
-      </p>
-    </div>
+  <div className="w-full">
+    <h3 className="font-headline text-3xl font-bold mb-4">{title}</h3>
+    <p className="text-muted-foreground text-lg leading-relaxed">
+      {description}
+      <Link href="#" className="text-primary hover:underline font-semibold whitespace-nowrap ml-1">
+        Learn more.
+      </Link>
+    </p>
   </div>
 );
 
@@ -116,25 +94,18 @@ export default function Home() {
                 comprehensive platform designed to empower students.
               </p>
             </div>
-            <div className="space-y-20">
+            <div className="space-y-16 max-w-4xl mx-auto text-left">
               <FeatureSection
                 title="Unlimited Access to Quality Resources"
-                description="Forget searching for reliable study material. We provide a vast, curated library of eBooks, video lectures, and practice quizzes for grades 1-10, all completely free. Everything you need is in one place."
-                imageUrl="https://placehold.co/800x600"
-                imageHint="library books"
+                description="Dive into our extensive digital library, meticulously curated to support the curriculum for grades 1 through 10. Forget the endless search for reliable study material; we provide a vast collection of eBooks, engaging video lectures from expert educators, and interactive practice quizzes to test your knowledge. Whether you need help with complex math problems or want to explore the depths of Indian history, everything you need is organized and available in one place, completely free of charge."
               />
               <FeatureSection
                 title="Clear Guidance for Your Future"
-                description="Don't know what career to pursue? Our AI-powered tools and dedicated mentors help you understand your strengths and interests, guiding you towards a fulfilling career path you're passionate about."
-                imageUrl="https://placehold.co/800x600"
-                imageHint="compass direction"
-                reverse={true}
+                description="Feeling uncertain about your future career path is normal, but you don't have to figure it out alone. Our innovative platform uses AI-powered tools to analyze your unique strengths, skills, and interests. Based on this, we generate a personalized career roadmap with clear, actionable milestones. Connect with experienced mentors who can provide real-world insights and guidance, helping you build confidence and navigate the journey towards a fulfilling career you're truly passionate about."
               />
               <FeatureSection
                 title="Bridging the Digital & Community Gap"
-                description="Learn and grow with others. Our platform connects you with fellow students and experienced mentors, creating a supportive community where you can ask questions, share knowledge, and stay motivated."
-                imageUrl="https://placehold.co/800x600"
-                imageHint="students collaborating"
+                description="Education is more powerful when it's a shared experience. Our platform is designed to bridge the digital and community gap for rural students by connecting you with a vibrant network of peers and dedicated mentors. Join discussion forums, participate in group study sessions, ask questions, and share your knowledge. This supportive environment ensures you stay motivated, learn from others, and build lasting connections that will help you succeed both in and out of the classroom."
               />
             </div>
           </div>
