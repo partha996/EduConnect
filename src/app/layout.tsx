@@ -30,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${literata.variable} ${ptSans.variable}`}>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
         <SidebarProvider>
-          <div className="flex min-h-screen">
+          <div className="flex min-h-screen w-full">
             <AppSidebar />
             <main className="flex-1 flex flex-col">
               {children}
