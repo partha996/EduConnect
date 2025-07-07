@@ -1,14 +1,41 @@
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GraduationCap, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+
+const features = [
+  {
+    title: "Quality Resources",
+    shortDescription: "Access a vast digital library of eBooks, video lectures, and practice quizzes.",
+    fullDescription: "Dive into our extensive digital library, meticulously curated to support the curriculum for grades 1 through 10. Forget the endless search for reliable study material; we provide a vast collection of eBooks, engaging video lectures from expert educators, and interactive practice quizzes to test your knowledge. Whether you need help with complex math problems or want to explore the depths of Indian history, everything you need is organized and available in one place, completely free of charge."
+  },
+  {
+    title: "Career Guidance",
+    shortDescription: "Get a personalized AI-generated career roadmap and connect with mentors.",
+    fullDescription: "Feeling uncertain about your future career path is normal, but you don't have to figure it out alone. Our innovative platform uses AI-powered tools to analyze your unique strengths, skills, and interests. Based on this, we generate a personalized career roadmap with clear, actionable milestones. Connect with experienced mentors who can provide real-world insights and guidance, helping you build confidence and navigate the journey towards a fulfilling career you're truly passionate about."
+  },
+  {
+    title: "Supportive Community",
+    shortDescription: "Join discussion forums and collaborate with a network of peers and mentors.",
+    fullDescription: "Education is more powerful when it's a shared experience. Our platform is designed to bridge the digital and community gap for rural students by connecting you with a vibrant network of peers and dedicated mentors. Join discussion forums, participate in group study sessions, ask questions, and share your knowledge. This supportive environment ensures you stay motivated, learn from others, and build lasting connections that will help you succeed both in and out of the classroom."
+  }
+];
+
 
 const LandingPageHeader = () => {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-zinc-700 bg-zinc-900 text-white">
             <div className="container flex h-16 items-center">
                 <div className="mr-auto flex items-center">
-                    <Link href="/" className="flex items-center gap-2 mr-6">
+                    <Link href="/dashboard" className="flex items-center gap-2 mr-6">
                         <GraduationCap className="h-6 w-6 text-primary" />
                         <span className="font-bold text-lg">EduConnect India</span>
                     </Link>
@@ -30,24 +57,6 @@ const LandingPageHeader = () => {
         </header>
     );
 };
-
-const FeatureSection = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => (
-  <div className="w-full">
-    <h3 className="font-headline text-3xl font-bold mb-4">{title}</h3>
-    <p className="text-muted-foreground text-lg leading-relaxed">
-      {description}
-      <Link href="#" className="text-primary hover:underline font-semibold whitespace-nowrap ml-1">
-        Learn more.
-      </Link>
-    </p>
-  </div>
-);
 
 
 export default function Home() {
@@ -91,22 +100,32 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 We address the key challenges in rural education with a
-                comprehensive platform designed to empower students.
+                comprehensive platform. Click a card to learn more.
               </p>
             </div>
-            <div className="space-y-16 max-w-4xl mx-auto text-left">
-              <FeatureSection
-                title="Unlimited Access to Quality Resources"
-                description="Dive into our extensive digital library, meticulously curated to support the curriculum for grades 1 through 10. Forget the endless search for reliable study material; we provide a vast collection of eBooks, engaging video lectures from expert educators, and interactive practice quizzes to test your knowledge. Whether you need help with complex math problems or want to explore the depths of Indian history, everything you need is organized and available in one place, completely free of charge."
-              />
-              <FeatureSection
-                title="Clear Guidance for Your Future"
-                description="Feeling uncertain about your future career path is normal, but you don't have to figure it out alone. Our innovative platform uses AI-powered tools to analyze your unique strengths, skills, and interests. Based on this, we generate a personalized career roadmap with clear, actionable milestones. Connect with experienced mentors who can provide real-world insights and guidance, helping you build confidence and navigate the journey towards a fulfilling career you're truly passionate about."
-              />
-              <FeatureSection
-                title="Bridging the Digital & Community Gap"
-                description="Education is more powerful when it's a shared experience. Our platform is designed to bridge the digital and community gap for rural students by connecting you with a vibrant network of peers and dedicated mentors. Join discussion forums, participate in group study sessions, ask questions, and share your knowledge. This supportive environment ensures you stay motivated, learn from others, and build lasting connections that will help you succeed both in and out of the classroom."
-              />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {features.map((feature, index) => (
+                    <Dialog key={index}>
+                        <DialogTrigger asChild>
+                            <Card className="flex flex-col text-center p-6 cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-xl">
+                                <CardHeader>
+                                    <CardTitle className="font-headline text-2xl">{feature.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <p className="text-muted-foreground">{feature.shortDescription}</p>
+                                </CardContent>
+                            </Card>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px]">
+                            <DialogHeader>
+                                <DialogTitle className="font-headline text-2xl">{feature.title}</DialogTitle>
+                                <DialogDescription className="text-base text-muted-foreground pt-4 text-left">
+                                    {feature.fullDescription}
+                                </DialogDescription>
+                            </DialogHeader>
+                        </DialogContent>
+                    </Dialog>
+                ))}
             </div>
           </div>
         </section>
