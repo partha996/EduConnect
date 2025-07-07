@@ -70,7 +70,7 @@ export function RoadmapForm({ onSubmit, isLoading }: RoadmapFormProps) {
                       className="min-h-[100px]"
                       {...field}
                     />
-                  FormControl>
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
