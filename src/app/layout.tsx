@@ -5,7 +5,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PathshalaConnect",
+  title: "EduConnect",
   description: "Empowering rural students with resources, guidance, and community.",
 };
 

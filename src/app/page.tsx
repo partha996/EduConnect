@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4 md:p-8">
       <header className="text-center mb-12">
         <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary mb-2">
-          PathshalaConnect
+          EduConnect
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
           Empowering rural students with curated resources, personalized career guidance, and a supportive community to unlock their full potential.
@@ -53,7 +53,7 @@ export default function Home() {
       </main>
 
       <footer className="mt-12 text-center text-muted-foreground text-sm">
-        <p>&copy; {new Date().getFullYear()} PathshalaConnect. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} EduConnect. All rights reserved.</p>
       </footer>
     </div>
   );
